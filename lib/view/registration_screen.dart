@@ -5,7 +5,7 @@ import 'package:chatapp/widgets/my_button.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:provider/provider.dart';
-
+import 'dart:io' show Platform;
 class RegistrationScreen extends StatefulWidget {
   static const String screenRoute = 'registration_screen';
 
@@ -144,7 +144,8 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                   }
                 },
               ),
-              MyButton(
+              //Platform.isAndroid==true?
+          MyButton(
                 color: Colors.blue[800]!,
                 title: 'Google Signin',
                 onPressed: () async {
@@ -160,6 +161,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                   }
                 },
               )
+              //:Container()
             ],
           ),
         ),
